@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E065B56A14804D5A00397CD4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E065B56914804D5A00397CD4 /* Cocoa.framework */; };
+		E065B59714804E2000397CD4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E065B58C14804E2000397CD4 /* MainMenu.xib */; };
+		E065B59814804E2000397CD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E065B58F14804E2000397CD4 /* AppDelegate.m */; };
+		E065B59914804E2000397CD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E065B59114804E2000397CD4 /* main.m */; };
+		E065B59A14804E2000397CD4 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E065B59314804E2000397CD4 /* Credits.rtf */; };
+		E065B59B14804E2000397CD4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E065B59414804E2000397CD4 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E065B56514804D5A00397CD4 /* InstaObjC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaObjC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E065B56914804D5A00397CD4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E065B56C14804D5A00397CD4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E065B56D14804D5A00397CD4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E065B56E14804D5A00397CD4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E065B58C14804E2000397CD4 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		E065B58E14804E2000397CD4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E065B58F14804E2000397CD4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E065B59014804E2000397CD4 /* InstaObjC-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InstaObjC-Prefix.pch"; sourceTree = "<group>"; };
+		E065B59114804E2000397CD4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E065B59314804E2000397CD4 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		E065B59414804E2000397CD4 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		E065B59514804E2000397CD4 /* InstaObjC-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "InstaObjC-Info.plist"; sourceTree = "<group>"; };
+		E065B59D1480504E00397CD4 /* ApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiKey.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E065B56214804D5A00397CD4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E065B56A14804D5A00397CD4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E065B55A14804D5A00397CD4 = {
+			isa = PBXGroup;
+			children = (
+				E065B58614804E2000397CD4 /* InstaObjC */,
+				E065B58714804E2000397CD4 /* InstaObjCExample */,
+				E065B56814804D5A00397CD4 /* Frameworks */,
+				E065B56614804D5A00397CD4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E065B56614804D5A00397CD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E065B56514804D5A00397CD4 /* InstaObjC.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E065B56814804D5A00397CD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E065B56914804D5A00397CD4 /* Cocoa.framework */,
+				E065B56B14804D5A00397CD4 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E065B56B14804D5A00397CD4 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E065B56C14804D5A00397CD4 /* AppKit.framework */,
+				E065B56D14804D5A00397CD4 /* CoreData.framework */,
+				E065B56E14804D5A00397CD4 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E065B58614804E2000397CD4 /* InstaObjC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InstaObjC;
+			sourceTree = "<group>";
+		};
+		E065B58714804E2000397CD4 /* InstaObjCExample */ = {
+			isa = PBXGroup;
+			children = (
+				E065B58814804E2000397CD4 /* App */,
+				E065B58D14804E2000397CD4 /* Classes */,
+				E065B59214804E2000397CD4 /* Resources */,
+				E065B59614804E2000397CD4 /* Vendor */,
+			);
+			path = InstaObjCExample;
+			sourceTree = "<group>";
+		};
+		E065B58814804E2000397CD4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E065B58914804E2000397CD4 /* Controller */,
+				E065B58A14804E2000397CD4 /* Model */,
+				E065B58B14804E2000397CD4 /* View */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E065B58914804E2000397CD4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E065B58A14804E2000397CD4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E065B58B14804E2000397CD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E065B58C14804E2000397CD4 /* MainMenu.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E065B58D14804E2000397CD4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E065B58E14804E2000397CD4 /* AppDelegate.h */,
+				E065B58F14804E2000397CD4 /* AppDelegate.m */,
+				E065B59014804E2000397CD4 /* InstaObjC-Prefix.pch */,
+				E065B59114804E2000397CD4 /* main.m */,
+				E065B59D1480504E00397CD4 /* ApiKey.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E065B59214804E2000397CD4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E065B59314804E2000397CD4 /* Credits.rtf */,
+				E065B59414804E2000397CD4 /* InfoPlist.strings */,
+				E065B59514804E2000397CD4 /* InstaObjC-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E065B59614804E2000397CD4 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E065B56414804D5A00397CD4 /* InstaObjC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E065B58314804D5A00397CD4 /* Build configuration list for PBXNativeTarget "InstaObjC" */;
+			buildPhases = (
+				E065B56114804D5A00397CD4 /* Sources */,
+				E065B56214804D5A00397CD4 /* Frameworks */,
+				E065B56314804D5A00397CD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstaObjC;
+			productName = InstaObjC;
+			productReference = E065B56514804D5A00397CD4 /* InstaObjC.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E065B55C14804D5A00397CD4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Bytesize;
+			};
+			buildConfigurationList = E065B55F14804D5A00397CD4 /* Build configuration list for PBXProject "InstaObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E065B55A14804D5A00397CD4;
+			productRefGroup = E065B56614804D5A00397CD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E065B56414804D5A00397CD4 /* InstaObjC */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E065B56314804D5A00397CD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E065B59714804E2000397CD4 /* MainMenu.xib in Resources */,
+				E065B59A14804E2000397CD4 /* Credits.rtf in Resources */,
+				E065B59B14804E2000397CD4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E065B56114804D5A00397CD4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E065B59814804E2000397CD4 /* AppDelegate.m in Sources */,
+				E065B59914804E2000397CD4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E065B58114804D5A00397CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E065B58214804D5A00397CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E065B58414804D5A00397CD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaObjCExample/Classes/InstaObjC-Prefix.pch";
+				INFOPLIST_FILE = "InstaObjCExample/Resources/InstaObjC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E065B58514804D5A00397CD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaObjCExample/Classes/InstaObjC-Prefix.pch";
+				INFOPLIST_FILE = "InstaObjCExample/Resources/InstaObjC-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E065B55F14804D5A00397CD4 /* Build configuration list for PBXProject "InstaObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E065B58114804D5A00397CD4 /* Debug */,
+				E065B58214804D5A00397CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E065B58314804D5A00397CD4 /* Build configuration list for PBXNativeTarget "InstaObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E065B58414804D5A00397CD4 /* Debug */,
+				E065B58514804D5A00397CD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E065B55C14804D5A00397CD4 /* Project object */;
+}

@@ -28,6 +28,7 @@
 		E065B56A14804D5A00397CD4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E065B56914804D5A00397CD4 /* Cocoa.framework */; };
 		E065B5A11480527500397CD4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E065B5A01480527500397CD4 /* WebKit.framework */; };
 		E0B9EB151486734700041281 /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB141486734700041281 /* InstagramUser.m */; };
+		E0B9EB1A14867ECF00041281 /* InstagramMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB1914867ECF00041281 /* InstagramMedia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		E065B5A01480527500397CD4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		E0B9EB131486734700041281 /* InstagramUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramUser.h; sourceTree = "<group>"; };
 		E0B9EB141486734700041281 /* InstagramUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramUser.m; sourceTree = "<group>"; };
+		E0B9EB1814867ECF00041281 /* InstagramMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramMedia.h; sourceTree = "<group>"; };
+		E0B9EB1914867ECF00041281 /* InstagramMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMedia.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			children = (
 				E0B9EB131486734700041281 /* InstagramUser.h */,
 				E0B9EB141486734700041281 /* InstagramUser.m */,
+				E0B9EB1814867ECF00041281 /* InstagramMedia.h */,
+				E0B9EB1914867ECF00041281 /* InstagramMedia.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				E008BA8114866F39007A9D7A /* AFXMLRequestOperation.m in Sources */,
 				E008BA8214866F39007A9D7A /* UIImageView+AFNetworking.m in Sources */,
 				E0B9EB151486734700041281 /* InstagramUser.m in Sources */,
+				E0B9EB1A14867ECF00041281 /* InstagramMedia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

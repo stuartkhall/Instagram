@@ -46,7 +46,17 @@
     // Fetch our own details
     [client getUser:@"self"
             success:^(InstagramUser* user) {
-                NSLog(@"Got user : %@ (%@)", user.fullname, user.username);
+                NSLog(@"\r\n\r\nGot self : %@ (%@)\r\n\r\n", user.fullname, user.username);
+            } 
+            failure:^(NSError *error, NSInteger statusCode) {
+                NSLog(@"Error fetching user %ld - %@", statusCode, [error localizedDescription]);
+            }
+     ];
+    
+    // Fetch a user by ID
+    [client getUser:@"128643"
+            success:^(InstagramUser* user) {
+                NSLog(@"\r\n\r\nGot user : %@ (%@)\r\n\r\n", user.fullname, user.username);
             } 
             failure:^(NSError *error, NSInteger statusCode) {
                 NSLog(@"Error fetching user %ld - %@", statusCode, [error localizedDescription]);

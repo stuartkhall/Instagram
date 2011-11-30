@@ -1,0 +1,3 @@
+[submodule "InstaObjCExample/Vendor/AFNetworking"]
+	path = InstaObjCExample/Vendor/AFNetworking
+	url = git://github.com/AFNetworking/AFNetworking.git

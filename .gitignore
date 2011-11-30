@@ -19,4 +19,4 @@ Documentation/keys
 *.xcodeproj/xcuserdata/*
 *.xcodeproj/project.xcworkspace/xcuserdata/*
 
-InstaObjCExample/Classes/ApiKey.h
+InstagramExample/Classes/ApiKey.h

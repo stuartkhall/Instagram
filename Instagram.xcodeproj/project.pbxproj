@@ -29,6 +29,7 @@
 		E0B9EB151486734700041281 /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB141486734700041281 /* InstagramUser.m */; };
 		E0B9EB1A14867ECF00041281 /* InstagramMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB1914867ECF00041281 /* InstagramMedia.m */; };
 		E0B9EB1D1486809700041281 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB1C1486809700041281 /* InstagramClient.m */; };
+		E0B9EB20148682A800041281 /* InstagramModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B9EB1F148682A800041281 /* InstagramModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,8 @@
 		E0B9EB1914867ECF00041281 /* InstagramMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramMedia.m; sourceTree = "<group>"; };
 		E0B9EB1B1486809600041281 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
 		E0B9EB1C1486809700041281 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
+		E0B9EB1E148682A800041281 /* InstagramModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramModel.h; sourceTree = "<group>"; };
+		E0B9EB1F148682A800041281 /* InstagramModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 		E008B9F514866F39007A9D7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E0B9EB1E148682A800041281 /* InstagramModel.h */,
+				E0B9EB1F148682A800041281 /* InstagramModel.m */,
 				E0B9EB131486734700041281 /* InstagramUser.h */,
 				E0B9EB141486734700041281 /* InstagramUser.m */,
 				E0B9EB1814867ECF00041281 /* InstagramMedia.h */,
@@ -381,6 +386,7 @@
 				E0B9EB151486734700041281 /* InstagramUser.m in Sources */,
 				E0B9EB1A14867ECF00041281 /* InstagramMedia.m in Sources */,
 				E0B9EB1D1486809700041281 /* InstagramClient.m in Sources */,
+				E0B9EB20148682A800041281 /* InstagramModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

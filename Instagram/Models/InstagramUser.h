@@ -7,14 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "InstagramModel.h"
 
-@interface InstagramUser : NSObject
-
-// Initialises an autoreleased user from a JSON dictionary
-+ (InstagramUser*)userWithDictionary:(NSDictionary*)dict;
-
-// Initialises an array of users from an a array of JSON dictionaries
-+ (NSArray*)usersFromDictionaries:(NSArray*)dicts;
+@interface InstagramUser : InstagramModel
 
 // Public properties
 @property (readonly) NSString* identifier;

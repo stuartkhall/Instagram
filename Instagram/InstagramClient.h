@@ -26,5 +26,12 @@
             success:(void (^)(NSArray* users))success
             failure:(void (^)(NSError* error, NSInteger statusCode))failure;
 
+// Get the current users feed
+- (void)getFeed:(int)count 
+          minId:(int)minId
+          maxId:(int)maxId
+            success:(void (^)(NSArray* media))success
+            failure:(void (^)(NSError* error, NSInteger statusCode))failure;
+
 
 @end

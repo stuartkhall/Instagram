@@ -10,6 +10,7 @@
 #import "AFJSONRequestOperation.h"
 
 #import "InstagramUser.h"
+#import "InstagramMedia.h"
 
 // Private
 @interface InstagramClient()
@@ -53,7 +54,7 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if ([operation hasAcceptableStatusCode]) {
                   // Success!
-                  success([InstagramUser userWithDictionary:[responseObject objectForKey:@"data"]]);
+                  success((InstagramUser*)[InstagramUser modelWithDictionary:[responseObject objectForKey:@"data"]]);
               }
               else {
                   // Positive failure
@@ -83,7 +84,7 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if ([operation hasAcceptableStatusCode]) {
                   // Success!
-                  success([InstagramUser usersFromDictionaries:[responseObject objectForKey:@"data"]]);
+                  success([InstagramUser modelsFromDictionaries:[responseObject objectForKey:@"data"]]);
               }
               else {
                   // Positive failure
@@ -97,4 +98,44 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
      ];
 }
 
+// Get the current users feed
+- (void)getFeed:(int)count 
+          minId:(int)minId
+          maxId:(int)maxId
+        success:(void (^)(NSArray* media))success
+        failure:(void (^)(NSError* error, NSInteger statusCode))failure {
+    // Setup the parameters
+    NSMutableDictionary* parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys:token, @"access_token", 
+                                       [NSNumber numberWithInt:count], @"count", 
+                                       nil];
+    
+    // Set the minumum ID if required
+    if (minId > 0) {
+        [parameters setObject:[NSNumber numberWithInt:minId] forKey:@"minId"];
+    }
+    
+    // Set the maximum ID if required
+    if (maxId > 0) {
+        [parameters setObject:[NSNumber numberWithInt:maxId] forKey:@"maxId"];
+    }
+    
+    // Fire off the request
+    [self getPath:@"users/self/feed"
+       parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if ([operation hasAcceptableStatusCode]) {
+                  success([InstagramMedia modelsFromDictionaries:[responseObject objectForKey:@"data"]]);
+              }
+              else {
+                  // Positive failure
+                  failure([NSError errorWithDomain:@"Instagram" code:0 userInfo:nil], [[operation response] statusCode]);
+              }
+          }
+          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              // Bombed
+              failure(error, [[operation response] statusCode]);
+          }
+     ];
+
+}
 @end

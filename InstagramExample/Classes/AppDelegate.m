@@ -10,6 +10,7 @@
 #import "ApiKey.h"
 #import "InstagramClient.h"
 #import "InstagramUser.h"
+#import "InstagramMedia.h"
 
 // Private
 @interface AppDelegate()
@@ -72,6 +73,24 @@
             } 
             failure:^(NSError *error, NSInteger statusCode) {
                 NSLog(@"Error search users %ld - %@", statusCode, [error localizedDescription]);
+            }
+     ];
+    
+    // Fetch the current user feed
+    [client getFeed:5
+              minId:-1
+              maxId:-1
+            success:^(NSArray *media) {
+                for (InstagramMedia* m in media)
+                    NSLog(@"Feed has %@ by %@ (%@) - %ld likes & %ld comments", 
+                          m.linkUrl, 
+                          m.user.fullname, 
+                          m.user.username,
+                          m.likeCount,
+                          m.commentCount);
+            } 
+            failure:^(NSError *error, NSInteger statusCode) {
+                NSLog(@"Error getting feed %ld - %@", statusCode, [error localizedDescription]);
             }
      ];
 }

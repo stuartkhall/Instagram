@@ -21,5 +21,11 @@
 @property (readonly) NSInteger likeCount;
 @property (readonly) NSString* filter;
 @property (readonly) InstagramUser* user;
+@property (readonly) NSString* locationIdentifier;
+@property (readonly) NSString* locationLatitude;
+@property (readonly) NSString* locationLongitude;
+@property (readonly) NSString* locationName;
+@property (readonly) NSDate* createdTime;
+@property (readonly) NSDictionary* images;
 
 @end

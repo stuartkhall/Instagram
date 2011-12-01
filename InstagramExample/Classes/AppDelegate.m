@@ -11,6 +11,7 @@
 #import "InstagramClient.h"
 #import "InstagramUser.h"
 #import "InstagramMedia.h"
+#import "InstagramImage.h"
 
 // Private
 @interface AppDelegate()
@@ -77,17 +78,18 @@
      ];
     
     // Fetch the current user feed
-    [client getFeed:5
+    [client getFeed:3
               minId:-1
               maxId:-1
             success:^(NSArray *media) {
                 for (InstagramMedia* m in media)
-                    NSLog(@"Feed has %@ by %@ (%@) - %ld likes & %ld comments", 
-                          m.linkUrl, 
+                    NSLog(@"%@ by %@ (%@) - %ld likes & %ld comments at %@\r\n\r\n", 
+                          [[m.images objectForKey:@"standard_resolution"] url], 
                           m.user.fullname, 
                           m.user.username,
                           m.likeCount,
-                          m.commentCount);
+                          m.commentCount,
+                          m.locationName);
             } 
             failure:^(NSError *error, NSInteger statusCode) {
                 NSLog(@"Error getting feed %ld - %@", statusCode, [error localizedDescription]);

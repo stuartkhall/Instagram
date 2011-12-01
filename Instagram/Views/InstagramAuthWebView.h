@@ -3,7 +3,6 @@
 //  Instagram
 //
 //  Created by Stuart Hall on 27/11/11.
-//  Copyright (c) 2011 Bytesize. All rights reserved.
 //
 
 #import <WebKit/WebKit.h>

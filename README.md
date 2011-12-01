@@ -17,3 +17,5 @@ Simple example:
 Check InstagramClient.h for all endpoints
 
 You'll need a client ID from http://instagram.com/developer/manage/
+
+Note : Only the user endpoints are currently implemented (http://instagram.com/developer/endpoints/users/)

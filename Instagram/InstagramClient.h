@@ -27,12 +27,25 @@
             success:(void (^)(NSArray* users))success
             failure:(void (^)(NSError* error, NSInteger statusCode))failure;
 
-// Get the current users feed
-- (void)getFeed:(int)count 
-          minId:(int)minId // -1 for start
-          maxId:(int)maxId // -1 for no upper limit
+// Get the current user's feed
+- (void)getUserFeed:(int)count 
+              minId:(int)minId // -1 for start
+              maxId:(int)maxId // -1 for no upper limit
+                success:(void (^)(NSArray* media))success
+                failure:(void (^)(NSError* error, NSInteger statusCode))failure;
+
+// Get a user's media
+- (void)getUserMedia:(NSString*)userId // Can be 'self' for the current user
+               count:(int)count 
+               minId:(int)minId // -1 for start
+               maxId:(int)maxId // -1 for no upper limit
+             success:(void (^)(NSArray* media))success
+             failure:(void (^)(NSError* error, NSInteger statusCode))failure;
+
+// Get the current user's likes
+- (void)getUserLikes:(int)count 
+              maxId:(int)maxId // -1 for no upper limit
             success:(void (^)(NSArray* media))success
             failure:(void (^)(NSError* error, NSInteger statusCode))failure;
-
 
 @end

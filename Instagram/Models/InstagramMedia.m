@@ -12,6 +12,10 @@
 
 @implementation InstagramMedia
 
+- (NSString*)description {
+    return [NSString stringWithFormat:@"Media : %@ by %@", self.linkUrl, self.user.username];
+}
+
 - (NSString*)identifier {
     return [self.dictionary objectForKey:@"id"];
 }

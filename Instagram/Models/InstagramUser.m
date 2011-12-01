@@ -12,6 +12,10 @@
 
 #pragma mark - Public properties
 
+- (NSString*)description {
+    return [NSString stringWithFormat:@"User : %@ (%@) - %@", self.fullname, self.username, self.identifier];
+}
+
 - (NSString*)identifier {
     return [self.dictionary objectForKey:@"id"];
 }

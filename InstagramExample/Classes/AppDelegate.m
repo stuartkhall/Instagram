@@ -23,6 +23,11 @@
 @synthesize window = _window;
 @synthesize authWebView;
 @synthesize client;
+@synthesize textView;
+@synthesize userTextField;
+@synthesize userSearchField;
+
+static int const kCount = 5;
 
 - (void)dealloc
 {
@@ -32,6 +37,11 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    // Turn off editing for the logging
+    [textView setEditable:NO];
+    
+    // Show the auth view
+    authWebView.frame = authWebView.superview.bounds;
     authWebView.authDelegate = self;
     [authWebView startLoadingWithClientId:kInstagramClientId 
                               redirectUrl:kInstagramCallbackUrl 
@@ -42,59 +52,11 @@
 
 // Success!
 - (void)instagramAuthSucceeded:(NSString*)token {
-    // Create a client with our token
+    // Create a client with our token, you could also persist the token here for next launch
     self.client = [InstagramClient clientWithToken:token];
     
-    // Fetch our own details
-    [client getUser:@"self"
-            success:^(InstagramUser* user) {
-                NSLog(@"\r\n\r\nGot self : %@ (%@)\r\n\r\n", user.fullname, user.username);
-            } 
-            failure:^(NSError *error, NSInteger statusCode) {
-                NSLog(@"Error fetching user %ld - %@", statusCode, [error localizedDescription]);
-            }
-     ];
-    
-    // Fetch a user by ID
-    [client getUser:@"128643"
-            success:^(InstagramUser* user) {
-                NSLog(@"\r\n\r\nGot user : %@ (%@)\r\n\r\n", user.fullname, user.username);
-            } 
-            failure:^(NSError *error, NSInteger statusCode) {
-                NSLog(@"Error fetching user %ld - %@", statusCode, [error localizedDescription]);
-            }
-     ];
-    
-    // Perform a search
-    [client searchUsers:@"Stuart"
-                  limit:3
-                success:^(NSArray* users) {
-                    for (InstagramUser* user in users)
-                        NSLog(@"Search matched user : %@ (%@)", user.fullname, user.username);
-            } 
-            failure:^(NSError *error, NSInteger statusCode) {
-                NSLog(@"Error search users %ld - %@", statusCode, [error localizedDescription]);
-            }
-     ];
-    
-    // Fetch the current user feed
-    [client getFeed:3
-              minId:-1
-              maxId:-1
-            success:^(NSArray *media) {
-                for (InstagramMedia* m in media)
-                    NSLog(@"%@ by %@ (%@) - %ld likes & %ld comments at %@\r\n\r\n", 
-                          [[m.images objectForKey:@"standard_resolution"] url], 
-                          m.user.fullname, 
-                          m.user.username,
-                          m.likeCount,
-                          m.commentCount,
-                          m.locationName);
-            } 
-            failure:^(NSError *error, NSInteger statusCode) {
-                NSLog(@"Error getting feed %ld - %@", statusCode, [error localizedDescription]);
-            }
-     ];
+    // Hide the webview
+    [authWebView setHidden:YES];
 }
 
 // Failed because user denied etc
@@ -113,6 +75,122 @@
 - (void)instagramAuthLoadFailed:(NSError*)error {
     NSAlert* alert = [NSAlert alertWithError:error];
     [alert runModal];
+}
+
+#pragma mark - Logging
+
+- (void)logError:(NSString*)request
+           error:(NSError*)error
+      statusCode:(NSInteger)statusCode {
+    NSString* txt = [NSString stringWithFormat:@"Error getting %@ %ld - %@", 
+                     request,
+                     statusCode, 
+                     [error localizedDescription]];
+    [textView setString:txt];
+}
+
+#pragma mark - Button events
+
+// Current user details
+- (IBAction)onCurrentUserDetails:(id)sender {
+    // Fetch the current user details
+    [textView setString:@"Loading current user..."];
+    [client getUser:@"self"
+            success:^(InstagramUser *user) {
+                [textView setString:[user description]];
+            }
+            failure:^(NSError *error, NSInteger statusCode) {
+                [self logError:@"media" error:error statusCode:statusCode];
+            }
+     ];
+}
+
+- (IBAction)onCurrentUserFeed:(id)sender {
+    // Fetch the current user feed
+    [textView setString:@"Loading feed..."];
+    [client getUserFeed:kCount
+                  minId:-1
+                  maxId:-1
+                 success:^(NSArray *media) {
+                     [textView setString:[media description]];
+                 }
+                 failure:^(NSError *error, NSInteger statusCode) {
+                     [self logError:@"media" error:error statusCode:statusCode];
+                 }
+     ];
+}
+
+- (IBAction)onCurrentUserMedia:(id)sender {
+    // Fetch the current user media
+    [textView setString:@"Loading media..."];
+    [client getUserMedia:@"self"
+                   count:kCount
+                   minId:-1
+                   maxId:-1
+                 success:^(NSArray *media) {
+                     [textView setString:[media description]];
+                 }
+                 failure:^(NSError *error, NSInteger statusCode) {
+                     [self logError:@"media" error:error statusCode:statusCode];
+                 }
+     ];
+}
+
+- (IBAction)onCurrentUserLikes:(id)sender {
+    // Fetch the current user likes
+    [textView setString:@"Loading likes..."];
+    [client getUserLikes:kCount
+                   maxId:-1
+                 success:^(NSArray *media) {
+                     [textView setString:[media description]];
+                 }
+                 failure:^(NSError *error, NSInteger statusCode) {
+                     [self logError:@"likes" error:error statusCode:statusCode];
+                 }
+     ];
+}
+
+// Other user details
+- (IBAction)onOtherUserDetails:(id)sender {
+    // Fetch the user details
+    [textView setString:@"Loading user..."];
+    [client getUser:[userTextField stringValue]
+            success:^(InstagramUser *user) {
+                [textView setString:[user description]];
+            }
+            failure:^(NSError *error, NSInteger statusCode) {
+                [self logError:@"media" error:error statusCode:statusCode];
+            }
+     ];
+}
+
+- (IBAction)onOtherUserMedia:(id)sender {
+    // Fetch the user media
+    [textView setString:@"Loading media..."];
+    [client getUserMedia:[userTextField stringValue]
+                   count:kCount
+                   minId:-1
+                   maxId:-1
+                 success:^(NSArray *media) {
+                     [textView setString:[media description]];
+                 }
+                 failure:^(NSError *error, NSInteger statusCode) {
+                     [self logError:@"media" error:error statusCode:statusCode];
+                 }
+     ];
+}
+    
+- (IBAction)onUserSearch:(id)sender {
+    [textView setString:@"Searching users..."];
+    [client searchUsers:[userSearchField stringValue]
+                  limit:kCount
+                success:^(NSArray *users) {
+                    [textView setString:[users description]];
+                } 
+                failure:^(NSError *error, NSInteger statusCode) {
+                    [self logError:@"user search" error:error statusCode:statusCode];
+                }
+     ];
 }
 
 @end

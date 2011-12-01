@@ -145,7 +145,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		E008B9F914866F39007A9D7A /* InstagramExample */ = {
+		E008B9F914866F39007A9D7A /* InstagramMacExample */ = {
 			isa = PBXGroup;
 			children = (
 				E008B9FA14866F39007A9D7A /* App */,
@@ -153,7 +153,7 @@
 				E008BA0514866F39007A9D7A /* Resources */,
 				E008BA0914866F39007A9D7A /* Vendor */,
 			);
-			path = InstagramExample;
+			path = InstagramMacExample;
 			sourceTree = "<group>";
 		};
 		E008B9FA14866F39007A9D7A /* App */ = {
@@ -259,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				E008B9EE14866F39007A9D7A /* Instagram */,
-				E008B9F914866F39007A9D7A /* InstagramExample */,
+				E008B9F914866F39007A9D7A /* InstagramMacExample */,
 				E065B56814804D5A00397CD4 /* Frameworks */,
 				E065B56614804D5A00397CD4 /* Products */,
 			);
@@ -365,7 +365,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -f InstagramExample/Classes/ApiKey.h ];\nthen\ncp InstagramExample/Classes/ApiKeyTemplate.h InstagramExample/Classes/ApiKey.h\nfi";
+			shellScript = "if [ ! -f InstagramMacExample/Classes/ApiKey.h ];\nthen\ncp InstagramMacExample/Classes/ApiKeyTemplate.h InstagramMacExample/Classes/ApiKey.h\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -448,8 +448,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InstagramExample/Classes/Instagram-Prefix.pch";
-				INFOPLIST_FILE = "InstagramExample/Resources/Instagram-Info.plist";
+				GCC_PREFIX_HEADER = "InstagramMacExample/Classes/Instagram-Prefix.pch";
+				INFOPLIST_FILE = "InstagramMacExample/Resources/Instagram-Info.plist";
 				PRODUCT_NAME = Instagram;
 				WRAPPER_EXTENSION = app;
 			};
@@ -459,8 +459,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "InstagramExample/Classes/Instagram-Prefix.pch";
-				INFOPLIST_FILE = "InstagramExample/Resources/Instagram-Info.plist";
+				GCC_PREFIX_HEADER = "InstagramMacExample/Classes/Instagram-Prefix.pch";
+				INFOPLIST_FILE = "InstagramMacExample/Resources/Instagram-Info.plist";
 				PRODUCT_NAME = Instagram;
 				WRAPPER_EXTENSION = app;
 			};

@@ -1,3 +1,3 @@
 [submodule "InstaObjCExample/Vendor/AFNetworking"]
-	path = InstaObjCExample/Vendor/AFNetworking
+	path = InstagramMacExample/Vendor/AFNetworking
 	url = git://github.com/AFNetworking/AFNetworking.git

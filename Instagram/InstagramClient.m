@@ -49,7 +49,6 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
         failure:(void (^)(NSError* error, NSInteger statusCode))failure {
     // Add our token to the parameters
     [parameters setObject:token forKey:@"access_token"];
-    
     // Fire off the request
     [self getPath:path
        parameters:parameters
@@ -88,7 +87,7 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
 }
 
 - (void)searchUsers:(NSString*)query 
-              limit:(int)count
+              limit:(NSInteger)count
             success:(void (^)(NSArray* users))success
             failure:(void (^)(NSError* error, NSInteger statusCode))failure {
     // Fire the get request
@@ -101,15 +100,15 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
 }
 
 // Get the current users feed
-- (void)getUserFeed:(int)count 
-              minId:(int)minId
-              maxId:(int)maxId
+- (void)getUserFeed:(NSInteger)count
+              minId:(NSString *)minId // nil for start
+              maxId:(NSString *)maxId // nil for no upper limit
             success:(void (^)(NSArray* media))success
             failure:(void (^)(NSError* error, NSInteger statusCode))failure {
     // Setup the parameters
     NSMutableDictionary* parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:count], @"count",  nil];
-    if (minId > 0) [parameters setObject:[NSNumber numberWithInt:minId] forKey:@"minId"];
-    if (maxId > 0) [parameters setObject:[NSNumber numberWithInt:maxId] forKey:@"maxId"];
+    if (minId) [parameters setObject:minId forKey:@"min_id"];
+    if (maxId) [parameters setObject:maxId forKey:@"max_id"];
     
     // Fire the get request
     [self getPath:@"users/self/feed"
@@ -122,15 +121,15 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
 
 // Get a user's media
 - (void)getUserMedia:(NSString*)userId // Can be 'self' for the current user
-               count:(int)count 
-               minId:(int)minId // -1 for start
-               maxId:(int)maxId // -1 for no upper limit
+               count:(NSInteger)count
+               minId:(NSString *)minId // nil for start
+               maxId:(NSString *)maxId // nil for no upper limit
              success:(void (^)(NSArray* media))success
              failure:(void (^)(NSError* error, NSInteger statusCode))failure {
     // Setup the parameters
     NSMutableDictionary* parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:count], @"count",  nil];
-    if (minId > 0) [parameters setObject:[NSNumber numberWithInt:minId] forKey:@"minId"];
-    if (maxId > 0) [parameters setObject:[NSNumber numberWithInt:maxId] forKey:@"maxId"];
+    if (minId) [parameters setObject:minId forKey:@"min_id"];
+    if (maxId) [parameters setObject:maxId forKey:@"max_id"];
     
     // Fire the get request
     [self getPath:[NSString stringWithFormat:@"users/%@/media/recent", userId]
@@ -142,13 +141,13 @@ static NSString* const kInstagramApiUrl = @"https://api.instagram.com/v1/";
 }
 
 // Get the current user's likes
-- (void)getUserLikes:(int)count 
-               maxId:(int)maxId // -1 for no upper limit
+- (void)getUserLikes:(NSInteger)count
+               maxId:(NSString *)maxId // nil for no upper limit
              success:(void (^)(NSArray* media))success
              failure:(void (^)(NSError* error, NSInteger statusCode))failure {
     // Setup the parameters
     NSMutableDictionary* parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: [NSNumber numberWithInt:count], @"count",  nil];
-    if (maxId > 0) [parameters setObject:[NSNumber numberWithInt:maxId] forKey:@"maxId"];
+    if (maxId) [parameters setObject:maxId forKey:@"max_id"];
     
     // Fire the get request
     [self getPath:@"users/self/media/liked"
